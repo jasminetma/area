@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Area Calculator</title>
+</head>
+<body>
+  <h1>The area of the cylinder is:</h1>
+  <p id="cylinder"></p>
+
+  <h1>The area of a square is:</h1>
+  <p id="square"></p>
+
+  <h1>The area of a rectangle is:</h1>
+  <p id="rectangle"></p>
+
+  <script>
+    const cylinder = {
+      radius: 7,
+      height: 2,
+      area: function () {
+        const pi = 3.14;
+        return pi * this.radius * this.radius * this.height;
+      }
+    };
+    document.getElementById("cylinder").textContent = "The area  of the cylinder is: " + cylinder.area();
+
+    const square = {
+      len: 7,
+      area: function () {
+        return this.side * this.len;
+      }
+    };
+    document.getElementById("square").textContent = "The area of the square is: " + square.area();
+
+    const rectangle = {
+      length: 7,
+      breadth: 2,
+      area: function () {
+        return this.length * this.breadth;
+      }
+    };
+    document.getElementById("rectangle").textContent = "The area of the rectangle is: " + rectangle.area();
+  </script>
+</body>
+</html>
