@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Customize Text Display</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    #outputText {
+      margin-top: 20px;
+      padding: 10px;
+      border-radius: 5px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Enter your text settings:</h2>
+
+  <form id="textForm">
+    <label for="textColor">Text color:</label>
+    <input type="text" id="textColor" placeholder="e.g. red or #ff0000"><br><br>
+
+    <label for="bgColor">Background color:</label>
+    <input type="text" id="bgColor" placeholder="e.g. white or #000000"><br><br>
+
+    <label for="textContent">Text content:</label>
+    <input type="text" id="textContent" placeholder="e.g. Hello, World!"><br><br>
+
+    <button type="submit">Show Text</button>
+  </form>
+
+  <div id="outputText"></div>
+
+  <script>
+    document.getElementById("textForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const textColor = document.getElementById("textColor").value;
+      const bgColor = document.getElementById("bgColor").value;
+      const content = document.getElementById("textContent").value;
+
+      const output = document.getElementById("outputText");
+      output.textContent = content;
+      output.style.color = textColor;
+      output.style.backgroundColor = bgColor;
+    });
+  </script>
+
+</body>
+</html>
